@@ -13,6 +13,7 @@ connect(urlString)
   })
   .catch(() => console.log('could not connect to database'));
 
+app.use(require('./middleware/logger'));
 app.use(express.json());
 app.use(require('./middleware/cors'));
 app.use('/persons', require('./routes/persons'));
